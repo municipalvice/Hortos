@@ -1,0 +1,4 @@
+# Hidden files #
+.env/
+.idea/
+.vscode/

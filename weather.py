@@ -36,4 +36,4 @@ def get_weather() -> dict:
     # except:
     #    print("There was an issue reading from the sensor.")
 if __name__ == "__main__":
-    pass
+    get_weather()

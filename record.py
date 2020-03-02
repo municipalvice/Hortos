@@ -30,4 +30,4 @@ def record(weather):
                 print("PostgreSQL connection is closed")
 
 if __name__ == "__main__":
-    pass
+    record()

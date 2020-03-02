@@ -26,4 +26,4 @@ def get_reading() -> dict:
             print("Reading from DHT failed", e.args)
 
 if __name__ == "__main__":
-    pass
+    get_reading()
