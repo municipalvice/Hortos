@@ -7,7 +7,7 @@ import time
 pin = '18'
 dht = adafruit_dht.DHT22(pin)
 
-def get_reading() -> dict:
+def get_reading()-> dict:
     """Returns the DHT22 reading: temperature in C and humidity as a percentage."""
     reading = {'temperature': None, 'humidity': None}
     print("Getting sensor reading...")

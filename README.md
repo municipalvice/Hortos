@@ -12,7 +12,7 @@
 ### Dependencies
 Include any essential instructions for:
 - https://github.com/adafruit/Adafruit_CircuitPython_DHT
-- GPIO
+- libgpiod2
 
 ### TODO
 - Move from PostgressDB to MongoDB
