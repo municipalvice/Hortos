@@ -9,8 +9,9 @@ dht = adafruit_dht.DHT22(pin)
 
 def get_reading()-> dict:
     """Returns the DHT22 reading: temperature in C and humidity as a percentage."""
+    
     reading = {'temperature': None, 'humidity': None}
-    print("Getting sensor reading...")
+    print("Getting dht11 sensor reading...")
 
     while (reading['temperature'] is None or reading['humidity'] is None):
         try:
@@ -20,10 +21,10 @@ def get_reading()-> dict:
             time.sleep(2)
             reading['humidity'] = dht.humidity
 
-            print("Initial reading:", reading)
+            print("Weather reading:", reading)
             return reading
         except RuntimeError as e:
-            print("Reading from DHT failed", e.args)
+            print("Reading from dht11 sensor failed.", e)
 
 if __name__ == "__main__":
     get_reading()

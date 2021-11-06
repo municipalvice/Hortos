@@ -13,6 +13,7 @@
 Include any essential instructions for:
 - https://github.com/adafruit/Adafruit_CircuitPython_DHT
 - libgpiod2
+- tplink-smarthome-api
 
 ### TODO
 - Move from PostgressDB to MongoDB

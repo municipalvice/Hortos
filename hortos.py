@@ -1,22 +1,27 @@
 #!/usr/bin/env python3
-import time, sched
-from weather import get_weather
+import dht11
+import json
+import sys
 
-scheduler = sched.scheduler(time.time, time.sleep)
+# const { spawn } = require('child_process')
 
-def schdule_reading(sc):
-    weather = get_weather()
-    humidity = weather['humidity']
-    if (humidity < 55.0) {
-        humidifier_on()
-    } elif (humidity > 85.0) {
-        humidifier_off()
-    }
-    scheduler.enter(6, 1, schdule_reading, (sc,))
+# has to be able to call python from node and accept a JSON object/string
+# - Call the above every 60 seconds or so to get weather reading often
+#  Then, with that reading create a function that keeps the humidity w/in 50-80%
 
 try:
-    scheduler.enter(6, 1, schdule_reading, (scheduler, ))
-    scheduler.run()
+    # returns dict with {'temperature': 0.0, 'humidity': 0.0}
+    weather_reading = dht11.get_reading() 
+    
+    # convert temp from C to F
+    weather_reading['temperature'] = (weather_reading['temperature'] * (9/5)) + 32
+    
+    # converts to JSON string (as below)
+    json_reading = json.dumps(weather_reading)
+    
+    print("Returning JSONified weather reading...", json_reading)
+    sys.stdout.flush()
+    return json_reading
 except:
     print("Unable to record weather...")
 

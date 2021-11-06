@@ -1,0 +1,23 @@
+{
+  "name": "hortos",
+  "version": "1.0.0",
+  "description": "App to controll smart plugs to create tent weather environment.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/municipalvice/Hortos.git"
+  },
+  "author": "municipalvice",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/municipalvice/Hortos/issues"
+  },
+  "homepage": "https://github.com/municipalvice/Hortos#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
